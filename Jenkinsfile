@@ -9,19 +9,6 @@ node {
 	{
 	app =docker.build('perpetuuiti/devopsupdates')
 	}
-	stage('Run') {
-            steps {
-                echo "Run docker image"
-                script {
-                    pipelineContext.dockerContainer = pipelineContext.app.run()
-                }
-            }
-        }
-        stage('Test') {
-            steps {
-                echo "Testing the app"
-            }
-        }
 	stage ('Push image')
 	{
 	docker.withRegistry('https://registry.hub.docker.com','docker-hub-createntials')
