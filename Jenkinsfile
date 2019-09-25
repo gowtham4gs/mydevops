@@ -12,7 +12,7 @@ node {
 	stage ('Run Application') {
     try {
       // Start database container here
-       sh 'docker run -d  -p 8000:8000  perpetuuiti/devopsupdates:latest'
+       sh 'docker run -d  perpetuuiti/devopsupdates:latest'
 
       // Run application using Docker image
     
@@ -32,10 +32,6 @@ node {
 	
 }
 	pipeline {
-    environment {
-        //This variable need be tested as string
-        doError = '1'
-    }
    
     agent any
     
