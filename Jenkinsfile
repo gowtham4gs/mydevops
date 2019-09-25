@@ -12,7 +12,7 @@ node {
 	stage ('Run Application') {
     try {
       // Start database container here
-       sh 'docker run -d --name Av3sample -p 8000:8000  perpetuuiti/devopsupdates:latest'
+       sh 'docker run -d  -p 8000:8000  perpetuuiti/devopsupdates:latest'
 
       // Run application using Docker image
     
