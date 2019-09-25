@@ -29,14 +29,7 @@ node {
       //sh 'docker-compose rm db'
     }
   }
-	stage ('Push image')
-	{
-	docker.withRegistry('https://registry.hub.docker.com','docker-hub-createntials')
-	{
-	app.push("${env.BUILD_NUMBER}")
-	app.push("latest")
-	}
-	}
+	
 }
 	pipeline {
 		agent any
