@@ -63,9 +63,8 @@ node {
         always {
             echo 'I will always say Hello again!'
             
-            emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
-                recipientProviders: [[$class: 'RequesterRecipientProvider'],[$class: 'CulpritsRecipientProvider']]
-                mail to: recipients,subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
+            emailext recipientProviders: [[$class: 'RequesterRecipientProvider'],[$class: 'CulpritsRecipientProvider']]
+                mail to: recipients,subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}",body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}"
             
         }
     }
