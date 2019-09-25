@@ -37,6 +37,8 @@ node {
 	app.push("latest")
 	}
 	}
+}
+	pipeline {
 	stages {
 
         stage ('success'){
